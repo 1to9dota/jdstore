@@ -1,8 +1,8 @@
 class Order < ApplicationRecord
-  t.integer :total, default: 0
-       t.integer :user_id
-       t.string :billing_name
-       t.string :billing_address
-       t.string :shipping_name
-       t.string :shipping_address
+  belongs_to :user
+
+   validates :billing_name, presence: true
+   validates :billing_address, presence: true
+   validates :shipping_name, presence: true
+   validates :shipping_address, presence: true
 end
