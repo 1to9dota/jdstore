@@ -1,15 +1,33 @@
+<div>
+  <div class="search">
+    <form action="/products/search" accept-charset="UTF-8" method="get">
+      <input name="utf8" type="hidden" value="✓">
+      <input class="search-input" type="text" name="query_string" value="" placeholder="输入你要搜索的商品">
+      <button type="submit" class="search-button pa tc"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div class="cart-wrap">
+  <div class="cart">
+    <a href="/carts">
+       <i class="fa fa-shopping-cart cart-icon "></i>我的购物车(0) &gt;
+    </a>
+  </div>
+</div>
+</div>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
+            <a class="navbar-brand" href="/">大慧鸡爪王 </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
             <li class="active">
-              <%= link_to("Products", products_path) %>
+              <%= link_to("商品界面", products_path) %>
             </li>
           </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -18,6 +36,8 @@
         购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
      <% end %>
   </li>
+
+
               <% if !current_user %>
                    <li><%= link_to("注册", new_user_registration_path) %> </li>
                    <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
